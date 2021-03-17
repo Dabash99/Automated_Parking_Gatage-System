@@ -17,5 +17,5 @@ void registerPlugins(Registrar registrar) {
   FirebaseCoreWeb.registerWith(registrar);
   FluttertoastWebPlugin.registerWith(registrar);
   GeolocatorPlugin.registerWith(registrar);
-  //registrar.registerMessageHandler();
+  registrar.registerMessageHandler();
 }

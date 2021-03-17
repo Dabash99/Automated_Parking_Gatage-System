@@ -109,7 +109,7 @@ class _home_mapState extends State<home_map> {
                       Padding(
                         padding: EdgeInsets.only(left: 20, top: 15),
                         child: Text(
-                          'HTI Garage',
+                          'HTI Garage',// Garage Name
                           style: TextStyle(
                               fontSize: 15,
                               fontWeight: FontWeight.bold,

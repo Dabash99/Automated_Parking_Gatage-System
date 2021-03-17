@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Park Your Car',
+      title: 'ParkinGrid',
       theme: ThemeData(
         primaryColor:Colors.white,
         visualDensity: VisualDensity.adaptivePlatformDensity,
