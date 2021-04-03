@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:gradeproject/AllWidgets/ProgressDialog.dart';
 import 'package:gradeproject/main.dart';
+import 'package:gradeproject/models/login_model.dart';
 import 'package:gradeproject/pages/sign_up.dart';
 import 'package:page_transition/page_transition.dart';
 import 'home.dart';
@@ -15,9 +16,13 @@ class Login extends StatefulWidget {
 
 class _LoginState extends State<Login> {
   static const String idScreen ="login";
+  LoginRequestModel requestModel;
 
-  TextEditingController EmailTEC = TextEditingController() ;
-  TextEditingController PasswTEC = TextEditingController() ;
+  @override
+  void initState(){
+    requestModel = new LoginRequestModel();
+  }
+  TextEditingController EmailTEC,PasswTEC = TextEditingController() ;
   @override
   Widget build(BuildContext context) {
     return Scaffold(

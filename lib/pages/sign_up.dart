@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:gradeproject/AllWidgets/ProgressDialog.dart';
 import 'package:gradeproject/main.dart';
-import 'package:gradeproject/models/register_model.dart';
+import 'package:gradeproject/models/reg_model.dart';
+
 import 'package:gradeproject/pages/home.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:http/http.dart' as http;
