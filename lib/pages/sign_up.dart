@@ -272,6 +272,7 @@ class _sign_upState extends State<sign_up> {
                                   borderRadius: BorderRadius.circular(150)),
                               child: FlatButton(
                                 onPressed: () async {
+
                                   final String firstName = FnameTEC.text;
                                   final String lastName = LnameTEC.text;
                                   final String email = EmailTEC.text;
