@@ -1,11 +1,13 @@
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:gradeproject/AllWidgets/ProgressDialog.dart';
+import 'package:gradeproject/api/apiservice.dart';
 import 'package:gradeproject/main.dart';
 import 'package:gradeproject/models/login_model.dart';
 import 'package:gradeproject/pages/sign_up.dart';
+import 'dart:convert';
+
 import 'package:page_transition/page_transition.dart';
 import 'home.dart';
 
@@ -15,14 +17,18 @@ class Login extends StatefulWidget {
 }
 
 class _LoginState extends State<Login> {
-  static const String idScreen ="login";
   LoginRequestModel requestModel;
+  GlobalKey<FormState> globalFormKey = GlobalKey<FormState>();
+  bool isApiCallProcess = false;
 
   @override
-  void initState(){
+  void initState() {
+    super.initState();
     requestModel = new LoginRequestModel();
   }
-  TextEditingController EmailTEC,PasswTEC = TextEditingController() ;
+
+  TextEditingController EmailTEC, PasswTEC = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -50,7 +56,8 @@ class _LoginState extends State<Login> {
                 ),
                 //Login data Container
                 Padding(
-                  padding: EdgeInsets.only(top: 100,bottom: 0,right: 10,left: 10),
+                  padding:
+                      EdgeInsets.only(top: 100, bottom: 0, right: 10, left: 10),
                   child: Container(
                     width: double.infinity,
                     // height: 400,
@@ -79,89 +86,115 @@ class _LoginState extends State<Login> {
                         SizedBox(
                           height: 20,
                         ),
-                        Column(
-                          children: <Widget>[
-                            bulidTextField(EmailTEC,'Email', false,
-                                TextInputType.emailAddress, null),
-                            SizedBox(
-                              height: 20,
-                            ),
-                            bulidTextField(PasswTEC,'Password', true,
-                                TextInputType.number, 'Only 8 number'),
-                            SizedBox(
-                              height: 30,
-                            ),
-                            Container(
-                              width: double.infinity,
-                              margin: EdgeInsets.all(15),
-                              decoration: BoxDecoration(
-                                  boxShadow: [
-                                    BoxShadow(
-                                      color: Colors.black26,
-                                      blurRadius: 3.0,
-                                      spreadRadius: 2.0,
-                                      offset: Offset(2.0,
-                                          2.0), // shadow direction: bottom right
-                                    )
-                                  ],
-                                  color: Color(0xff078547),
-                                  borderRadius: BorderRadius.circular(150)),
-                              child: FlatButton(
-                                onPressed: () {
-                                  if(PasswTEC.text.isEmpty || EmailTEC.text.isEmpty){
-                                    displayToastMessage("Please fill form to log in", context);
-                                  }
-                                  else if(!EmailTEC.text.contains("@")){
-                                    displayToastMessage("Email address not Valid",context);
-                                  }
-                                  else{
-                                  }
-                                },
-                                child: Text(
-                                  'Sign in',
-                                  style: TextStyle(
-                                      color: Colors.white,
-                                      fontWeight: FontWeight.w600,
-                                      fontSize: 17),
-                                ),
+                        Form(
+                          key: globalFormKey,
+                          child: Column(
+                            children: <Widget>[
+                              bulidTextField(
+                                  EmailTEC,
+                                  'Email',
+                                  false,
+                                  TextInputType.emailAddress,
+                                  null,
+                                  (input) => requestModel.email = input),
+                              SizedBox(
+                                height: 20,
                               ),
-                            ),
-                            SizedBox(
-                              height: 10,
-                            ),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: <Widget>[
-                                Text(
-                                  'Don\'t have an account?',
-                                  style: TextStyle(
-                                      color: Colors.black,
-                                      fontWeight: FontWeight.w600,
-                                      fontSize: 14
-                                  ),
-                                ),
-                                GestureDetector(
-                                  onTap: (){
-                                    Navigator.push(
-                                      context,
-                                      MaterialPageRoute(builder: (context) => sign_up()),
-                                    );
-                                  },
-                                  child: Text(
-                                    'Sign up',
-                                    style: TextStyle(
-                                        color: Color(0xff078547),
-                                        fontWeight: FontWeight.bold,
-                                        fontSize: 17
+                              bulidTextField(
+                                  PasswTEC,
+                                  'Password',
+                                  true,
+                                  TextInputType.number,
+                                  'Only 8 number',
+                                  (input) => requestModel.password = input),
+                              SizedBox(
+                                height: 30,
+                              ),
+                              GestureDetector(
+                                onTap: () {
+                                  if (vaildateAndSave()) {
+                                    print(requestModel.toJson());
+
+                                    setState(() {
+                                      isApiCallProcess = true;
+                                    });
+                                    APIService apiService = new APIService();
+                                    apiService
+                                        .login(requestModel)
+                                        .then((value) {
+                                      if(value != null){
+                                        setState(() {
+                                          isApiCallProcess = false;
+                                        });
+                                      }                                   });
+                                  }
+
+                                },
+                                child: Container(
+                                  width: double.infinity,
+                                  margin: EdgeInsets.all(15),
+                                  decoration: BoxDecoration(
+                                      boxShadow: [
+                                        BoxShadow(
+                                          color: Colors.black26,
+                                          blurRadius: 3.0,
+                                          spreadRadius: 2.0,
+                                          offset: Offset(2.0,
+                                              2.0), // shadow direction: bottom right
+                                        )
+                                      ],
+                                      color: Color(0xff078547),
+                                      borderRadius: BorderRadius.circular(150)),
+                                  child: Padding(
+                                    padding: const EdgeInsets.all(15.0),
+                                    child: Center(
+                                      child: Text(
+                                        'Sign in',
+                                        style: TextStyle(
+                                            color: Colors.white,
+                                            fontWeight: FontWeight.w600,
+                                            fontSize: 17),
+                                      ),
                                     ),
                                   ),
-                                )
-                              ],
-                            ),
-                            SizedBox(
-                              height: 10,
-                            ),
-                          ],
+                                ),
+                              ),
+                              SizedBox(
+                                height: 10,
+                              ),
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: <Widget>[
+                                  Text(
+                                    'Don\'t have an account?',
+                                    style: TextStyle(
+                                        color: Colors.black,
+                                        fontWeight: FontWeight.w600,
+                                        fontSize: 14),
+                                  ),
+                                  GestureDetector(
+                                    onTap: () {
+                                      Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) => sign_up()),
+                                      );
+                                    },
+                                    child: Text(
+                                      'Sign up',
+                                      style: TextStyle(
+                                          color: Color(0xff078547),
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 17),
+                                    ),
+                                  )
+                                ],
+                              ),
+                              SizedBox(
+                                height: 10,
+                              ),
+                            ],
+                          ),
                         )
                       ],
                     ),
@@ -174,16 +207,28 @@ class _LoginState extends State<Login> {
       ),
     );
   }
-  displayToastMessage (String message , BuildContext context){
+
+  displayToastMessage(String message, BuildContext context) {
     Fluttertoast.showToast(msg: message);
+  }
+
+  bool vaildateAndSave() {
+    final form = globalFormKey.currentState;
+    if (form.validate()) {
+      form.save();
+      return true;
+    } else {
+      return false;
+    }
   }
 }
 
-Widget bulidTextField( TextEditingController controller,
-    String hintText, bool _isObscure, var typeinput, String helptext) {
+Widget bulidTextField(TextEditingController controller, String hintText,
+    bool _isObscure, var typeinput, String helptext, Function onsaved) {
   return Padding(
     padding: const EdgeInsets.symmetric(horizontal: 15),
-    child: TextField(
+    child: TextFormField(
+      onSaved: onsaved,
       controller: controller,
       obscureText: _isObscure,
       keyboardType: typeinput,
@@ -197,11 +242,9 @@ Widget bulidTextField( TextEditingController controller,
         ),
         border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(10),
-            borderSide:  BorderSide(color: Color(0xff078547))),
+            borderSide: BorderSide(color: Color(0xff078547))),
         prefixIcon: hintText == 'Email' ? Icon(Icons.email) : Icon(Icons.lock),
       ),
     ),
   );
 }
-
-void setState(Null Function() param0) {}
