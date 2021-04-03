@@ -16,12 +16,13 @@ class APIService {
   }
 
   Future<LoginResponseModel> login(LoginRequestModel RequestModel) async {
-    String url = "graduation-project-apis.herokuapp.com/login";
     var apiurl = Uri.https(
         'graduation-project-apis.herokuapp.com', '/login', {'q': '{http}'});
     final response = await http.post(apiurl,
+        headers: {HttpHeaders.authorizationHeader: "Basic xxx"},
         body: RequestModel.toJson());
-    if (response.statusCode == 201 || response.statusCode == 400) {
+    print("Status code:  ${response.statusCode}");
+    if (response.statusCode == 200) {
       return LoginResponseModel.fromJson(json.decode(response.body));
     } else {
       throw Exception('Failed to load Data');
