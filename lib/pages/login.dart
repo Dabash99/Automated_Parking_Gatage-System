@@ -1,5 +1,4 @@
-import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_database/firebase_database.dart';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
@@ -111,7 +110,6 @@ class _LoginState extends State<Login> {
                                     displayToastMessage("Email address not Valid",context);
                                   }
                                   else{
-                                    LoginandauthUser(context);
                                   }
                                 },
                                 child: Text(
@@ -173,48 +171,6 @@ class _LoginState extends State<Login> {
   }
   displayToastMessage (String message , BuildContext context){
     Fluttertoast.showToast(msg: message);
-  }
-  void LoginandauthUser(BuildContext context)async{
-    final FirebaseAuth _firebaseAuth = FirebaseAuth.instance;
-    showDialog(context: context,barrierDismissible: false,builder: (BuildContext context){
-      return progressdialog("Please Wait....");
-    });
-
-    final User firebaseUser= (
-        await _firebaseAuth.signInWithEmailAndPassword
-          (email: EmailTEC.text,
-            password: PasswTEC.text)
-            .catchError((errMsg){
-              Navigator.pop(context);
-          displayToastMessage("Error: "+ errMsg.toString(), context);
-        })).user;
-    if (firebaseUser != null) //User Created
-      {
-      // Save info to Data base
-      usersRef.child(firebaseUser.uid).once().then((DataSnapshot snap){
-        if (snap.value != null){
-          Navigator.push(
-            context,
-            PageTransition(
-              type: PageTransitionType.rightToLeftWithFade,
-              child: home_map(),
-            ),
-          );
-          displayToastMessage("You have logged in successfully", context);
-        }
-        else {
-          Navigator.pop(context);
-          _firebaseAuth.signOut();
-          displayToastMessage("No record exists for this user. Please create a new account.", context);
-        }
-      });
-    }
-    else{
-      //Error Message
-      Navigator.pop(context);
-      displayToastMessage("Error Occurred,Can\'t Sign in", context);
-    }
-
   }
 }
 

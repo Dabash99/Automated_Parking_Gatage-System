@@ -20,8 +20,8 @@ class home_map extends StatefulWidget {
 
 class _home_mapState extends State<home_map> {
   static const String idScreen = "home";
-
-
+  /*PolylinePoints polylinePoints = PolylinePoints();
+  List <PointLatLng> decodedPolylinePoints = polylinePoints.decodePolyline() */
   GoogleMapController mapController;
   List <LatLng> PlinCordinates = [];
   Set <Polyline> polylineset={};
@@ -172,4 +172,7 @@ class _home_mapState extends State<home_map> {
 //     mapController = controller;
 //   });
 // }
+Future<void> getplaceDirection()async{
+
+}
 }

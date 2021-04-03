@@ -67,3 +67,54 @@ PreferredSize(
                   ),
                   onPressed: () => _scaffoldKey.currentState.openDrawer())),
         ),
+
+
+////////////////////////////////////////////////
+displayToastMessage("Congratulation your account has been Created", context);
+      Navigator.push(
+        context,
+        PageTransition(
+          type: PageTransitionType.rightToLeftWithFade,
+          child: home_map(),
+        ),
+      );
+    }
+    else{
+      Navigator.pop(context);
+
+      //Error Message
+      displayToastMessage("New User account didn\'t Create", context);
+    }
+  }
+}
+/////////////////////////////////////
+validate
+if (PasswTEC.text.length < 8) {
+                                    displayToastMessage(
+                                        "Password must be atleast 8 Characters",
+                                        context);
+                                  }
+                                  else if (CNTEC.text.length >= 4 &&
+                                      CNTEC.text.length <= 2) {
+                                    displayToastMessage(
+                                        "Car Number must be atleast 2 Numbers",
+                                        context);
+                                  }
+                                  else if (CLTEC.text.length >= 4 &&
+                                      CLTEC.text.length <= 2) {
+                                    displayToastMessage(
+                                        "Car Letter must be atleast 2 Numbers",
+                                        context);
+                                  }
+                                  else if (!EmailTEC.text.contains("@")) {
+                                    displayToastMessage(
+                                        "Email address not Valid", context);
+                                  }
+                                  else if (PhoneNTEC.text.isEmpty ||
+                                      PhoneNTEC.text.length < 11) {
+                                    displayToastMessage(
+                                        "Phone number is mandatory", context);
+                                  }
+                                  else {
+
+                                  }
