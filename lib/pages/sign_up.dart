@@ -106,7 +106,7 @@ class _sign_upState extends State<sign_up> {
                                   children: <Widget>[
                                     Flexible(
                                       child: TextFormField(
-                                          onSaved: (input)=> Register.firstName,
+                                          onSaved: (input)=> Register.firstName=input,
                                           controller: FnameTEC,
                                           keyboardType: TextInputType.text,
                                           decoration: InputDecoration(
@@ -130,7 +130,7 @@ class _sign_upState extends State<sign_up> {
                                     ),
                                     Flexible(
                                       child: TextFormField(
-                                          onSaved: (input)=> Register.lastName,
+                                          onSaved: (input)=> Register.lastName=input,
 
                                           controller: LnameTEC,
                                           keyboardType: TextInputType.text,
@@ -162,7 +162,7 @@ class _sign_upState extends State<sign_up> {
                                 height: 20,
                               ),
                               bulidTextField(PasswTEC, 'Password', true,
-                                  TextInputType.number, 'Only 8 number',(input)=> Register.password),
+                                  TextInputType.number, 'Only 8 number',(input)=> Register.password=input),
                               bulidTextField(REPasswTEC, 'Repeat Password', true,
                                   TextInputType.number, 'Only 8 number',null),
                               Padding(
@@ -174,7 +174,7 @@ class _sign_upState extends State<sign_up> {
                                   children: <Widget>[
                                     Flexible(
                                       child: TextFormField(
-                                        onSaved: (input)=> Register.carNumber,
+                                        onSaved: (input)=> Register.carNumber=input,
                                           controller: CNTEC,
                                           keyboardType: TextInputType.number,
                                           decoration: InputDecoration(
@@ -198,7 +198,7 @@ class _sign_upState extends State<sign_up> {
                                     ),
                                     Flexible(
                                       child: TextFormField(
-                                          onSaved: (input)=> Register.carLetter,
+                                          onSaved: (input)=> Register.carLetter=input,
 
                                           controller: CLTEC,
                                           keyboardType: TextInputType.text,
@@ -228,7 +228,7 @@ class _sign_upState extends State<sign_up> {
                                 padding:
                                     const EdgeInsets.symmetric(horizontal: 15),
                                 child: TextFormField(
-                                    onSaved: (input)=> Register.phoneNumber,
+                                    onSaved: (input)=> Register.phoneNumber=input,
 
                                     controller: PhoneNTEC,
                                     keyboardType: TextInputType.phone,
@@ -280,14 +280,14 @@ class _sign_upState extends State<sign_up> {
                                           setState(() {
                                             isApiCallProcess = false;
                                           });
-                                          /*Navigator.push(
+                                          Navigator.push(
                                             context,
                                             PageTransition(
                                               type: PageTransitionType
                                                   .rightToLeftWithFade,
                                               child: home_map(),
                                             ),
-                                          );*/
+                                          );
                                         }
                                       });
                                     }

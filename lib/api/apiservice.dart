@@ -6,7 +6,7 @@ import 'dart:convert';
 import 'dart:async';
 
 class APIService {
-  Future<RegisterRequestModel> Request (RegisterRequestModel RegisterModel) async {
+  Future<RegisterResponseModel> Request (RegisterRequestModel RegisterModel) async {
     /*var apiurl = Uri.parse(
         'https://graduation-project-apis.herokuapp.com/login');*/
     var apiurl = Uri.https(

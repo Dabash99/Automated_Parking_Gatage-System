@@ -32,12 +32,12 @@ class RegisterRequestModel {
 
   Map<String, dynamic> toJson() {
     Map<String, dynamic> map = {
-      "firstName": firstName.trim(),
-      "lastName": lastName.trim(),
-      "email": email.trim(),
-      "password": password.trim(),
-      "phoneNumber": phoneNumber.trim(),
-      "carNumber": carNumber.trim(),
+      "firstName": firstName,
+      "lastName": lastName,
+      "email": email,
+      "password": password,
+      "phoneNumber": phoneNumber,
+      "carNumber": carNumber,
       "carLetter": carLetter,
     };
     return map;
