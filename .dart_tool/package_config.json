@@ -93,9 +93,9 @@
     },
     {
       "name": "fluttertoast",
-      "rootUri": "file:///C:/flutter_windows_1.22.5-stable/flutter/.pub-cache/hosted/pub.dartlang.org/fluttertoast-7.1.8",
+      "rootUri": "file:///C:/flutter_windows_1.22.5-stable/flutter/.pub-cache/hosted/pub.dartlang.org/fluttertoast-8.0.3",
       "packageUri": "lib/",
-      "languageVersion": "2.7"
+      "languageVersion": "2.12"
     },
     {
       "name": "geolocator",
@@ -296,7 +296,7 @@
       "languageVersion": "2.10"
     }
   ],
-  "generated": "2021-04-03T23:34:46.905514Z",
+  "generated": "2021-04-04T17:35:09.684153Z",
   "generator": "pub",
   "generatorVersion": "2.12.2"
 }

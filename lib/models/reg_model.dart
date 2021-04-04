@@ -1,7 +1,3 @@
-// To parse this JSON data, do
-//
-//     final userModelRegister = userModelRegisterFromJson(jsonString);
-
 import 'dart:convert';
 
 UserModelRegister userModelRegisterFromJson(String str) => UserModelRegister.fromJson(json.decode(str));
@@ -54,12 +50,12 @@ class User {
   );
 
   Map<String, dynamic> toJson() => {
-    "firstName": firstName,
-    "lastName": lastName,
-    "email": email,
-    "password": password,
-    "phoneNumber": phoneNumber,
-    "carNumber": carNumber,
+    "firstName": firstName.trim(),
+    "lastName": lastName.trim(),
+    "email": email.trim(),
+    "password": password.trim(),
+    "phoneNumber": phoneNumber.trim(),
+    "carNumber": carNumber.trim(),
     "carLetter": carLetter,
   };
 }

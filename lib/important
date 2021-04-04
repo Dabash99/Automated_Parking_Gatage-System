@@ -118,3 +118,13 @@ if (PasswTEC.text.length < 8) {
                                   else {
 
                                   }
+                       //////////////////////////
+
+displayToastMessage("Congratulation your account has been Created", context);
+                                  Navigator.push(
+                                    context,
+                                    PageTransition(
+                                      type: PageTransitionType.rightToLeftWithFade,
+                                      child: home_map(),
+                                    ),
+                                  );
