@@ -162,9 +162,9 @@ class _sign_upState extends State<sign_up> {
                                 height: 20,
                               ),
                               bulidTextField(PasswTEC, 'Password', true,
-                                  TextInputType.number, 'Only 8 number',(input)=> Register.password=input),
+                                  TextInputType.text, 'Only 8 number',(input)=> Register.password=input),
                               bulidTextField(REPasswTEC, 'Repeat Password', true,
-                                  TextInputType.number, 'Only 8 number',null),
+                                  TextInputType.text, 'Only 8 number',null),
                               Padding(
                                 padding:
                                     const EdgeInsets.symmetric(horizontal: 15),

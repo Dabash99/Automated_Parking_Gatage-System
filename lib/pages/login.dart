@@ -103,7 +103,7 @@ class _LoginState extends State<Login> {
                                   PasswTEC,
                                   'Password',
                                   true,
-                                  TextInputType.number,
+                                  TextInputType.text,
                                   'Only 8 number',
                                   (input) => requestModel.password = input),
                               SizedBox(
