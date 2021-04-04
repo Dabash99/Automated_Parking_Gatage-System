@@ -32,7 +32,7 @@ class _home_mapState extends State<home_map> {
   var gelocator = Geolocator();
   double bottomPaddingofMap= 0;
   static final CameraPosition _keyplex = CameraPosition(
-      target: LatLng(30.287265, 31.7406), zoom: 17.0);
+      target: LatLng(30.287265, 31.7406), zoom: 30.0);
   void locatepostion() async {
     Position position = await Geolocator.getCurrentPosition(
         desiredAccuracy: LocationAccuracy.high);
