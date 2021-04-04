@@ -60,7 +60,6 @@ class _LoginState extends State<Login> {
                       EdgeInsets.only(top: 100, bottom: 0, right: 10, left: 10),
                   child: Container(
                     width: double.infinity,
-                    // height: 400,
                     decoration: BoxDecoration(
                         color: Colors.white,
                         borderRadius: BorderRadius.circular(15)),
@@ -114,7 +113,6 @@ class _LoginState extends State<Login> {
                                 onTap: () {
                                   if (vaildateAndSave()) {
                                     print(requestModel.toJson());
-
                                     setState(() {
                                       isApiCallProcess = true;
                                     });
@@ -122,13 +120,13 @@ class _LoginState extends State<Login> {
                                     apiService
                                         .login(requestModel)
                                         .then((value) {
-                                      if(value != null){
+                                      if (value != null) {
                                         setState(() {
                                           isApiCallProcess = false;
                                         });
-                                      }                                   });
+                                      }
+                                    });
                                   }
-
                                 },
                                 child: Container(
                                   width: double.infinity,

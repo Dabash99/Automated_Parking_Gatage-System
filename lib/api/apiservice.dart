@@ -5,7 +5,7 @@ import 'dart:async';
 import 'dart:io';
 
 class APIService {
-  Future<LoginResponseModel> getGoodRequest1(
+ /* Future<LoginResponseModel> getGoodRequest1(
       LoginRequestModel RequestModel) async {
     var apiurl = Uri.https(
         'graduation-project-apis.herokuapp.com', '/login', {'q': '{http}'});
@@ -13,15 +13,16 @@ class APIService {
     String data = response.body;
 
     print(jsonDecode(data));
-  }
-
+  }*/
   Future<LoginResponseModel> login(LoginRequestModel RequestModel) async {
     var apiurl = Uri.https(
         'graduation-project-apis.herokuapp.com', '/login', {'q': '{http}'});
     final response = await http.post(apiurl,
         headers: {HttpHeaders.authorizationHeader: "Basic xxx"},
         body: RequestModel.toJson());
+    print("Status body:  ${response.body}");
     print("Status code:  ${response.statusCode}");
+
     if (response.statusCode == 200) {
       return LoginResponseModel.fromJson(json.decode(response.body));
     } else {
@@ -29,3 +30,5 @@ class APIService {
     }
   }
 }
+
+
