@@ -17,7 +17,7 @@ class Login extends StatefulWidget {
 }
 
 class _LoginState extends State<Login> {
-  LoginRequestModel requestModel;
+  LoginRequestModel requestModel,reConvert;
   GlobalKey<FormState> globalFormKey = GlobalKey<FormState>();
   bool isApiCallProcess = false;
 
@@ -124,6 +124,13 @@ class _LoginState extends State<Login> {
                                         setState(() {
                                           isApiCallProcess = false;
                                         });
+                                        Navigator.push(
+                                          context,
+                                          PageTransition(
+                                            type: PageTransitionType.rightToLeftWithFade,
+                                            child: home_map(),
+                                          ),
+                                        );
                                       }
                                     });
                                   }
