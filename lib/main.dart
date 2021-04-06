@@ -1,8 +1,9 @@
 
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:gradeproject/pages/garage_select.dart';
 import 'package:gradeproject/pages/home.dart';
-import 'package:gradeproject/pages/login.dart';
+
 import 'package:gradeproject/pages/splashscreen.dart';
 
 
@@ -17,13 +18,14 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+
       debugShowCheckedModeBanner: false,
       title: 'ParkinGrid',
       theme: ThemeData(
         primaryColor:Colors.white,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: SC(),
+      home: home_map(),
     );
   }
 }

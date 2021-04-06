@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-class progressdialog extends StatelessWidget {
+class progressDialog extends StatelessWidget {
   String message;
-  progressdialog(this.message);
+  progressDialog(this.message);
   @override
   Widget build(BuildContext context) {
     return Dialog(
@@ -19,11 +19,11 @@ class progressdialog extends StatelessWidget {
           child: Row(
             children:<Widget> [
               SizedBox(width: 6,),
-              CircularProgressIndicator(valueColor: AlwaysStoppedAnimation<Color>(Colors.white54),),
+              CircularProgressIndicator(valueColor: AlwaysStoppedAnimation<Color>(Color(0xff078547)),),
               SizedBox(width: 26,),
               Text(message,
                 style: TextStyle(
-                    color: Colors.white54
+                    color: Color(0xff078547)
                 ),)
             ],
           ),

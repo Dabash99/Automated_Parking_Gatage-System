@@ -218,6 +218,12 @@
       "languageVersion": "2.7"
     },
     {
+      "name": "progress_dialog",
+      "rootUri": "file:///C:/flutter_windows_1.22.5-stable/flutter/.pub-cache/hosted/pub.dartlang.org/progress_dialog-1.2.4",
+      "packageUri": "lib/",
+      "languageVersion": "2.7"
+    },
+    {
       "name": "provider",
       "rootUri": "file:///C:/flutter_windows_1.22.5-stable/flutter/.pub-cache/hosted/pub.dartlang.org/provider-4.3.3",
       "packageUri": "lib/",
@@ -296,7 +302,7 @@
       "languageVersion": "2.10"
     }
   ],
-  "generated": "2021-04-04T17:35:09.684153Z",
+  "generated": "2021-04-06T00:01:11.542761Z",
   "generator": "pub",
   "generatorVersion": "2.12.2"
 }

@@ -12,6 +12,10 @@ class cus_appbar extends StatelessWidget with PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
+      iconTheme: IconThemeData(
+        color: Color(0xff078547)
+      ),
+      brightness:Brightness.dark,
       leading: Leading,
       title: Center(
           child: Row(

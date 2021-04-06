@@ -14,7 +14,7 @@ MERGED from [com.google.android.gms:play-services-location:17.0.0] C:\Users\Ahme
 MERGED from [com.google.android.gms:play-services-base:17.0.0] C:\Users\Ahmed\.gradle\caches\transforms-2\files-2.1\a98d174f43943e44235aa13f5f5458ec\play-services-base-17.0.0\AndroidManifest.xml:17:1-29:12
 MERGED from [com.google.android.gms:play-services-places-placereport:17.0.0] C:\Users\Ahmed\.gradle\caches\transforms-2\files-2.1\8279172c97fd38e0319640c39812b761\play-services-places-placereport-17.0.0\AndroidManifest.xml:17:1-24:12
 MERGED from [com.google.android.gms:play-services-tasks:17.0.0] C:\Users\Ahmed\.gradle\caches\transforms-2\files-2.1\0ac5027c71fa1627280b37696bd72cd9\play-services-tasks-17.0.0\AndroidManifest.xml:2:1-9:12
-MERGED from [com.google.android.gms:play-services-basement:17.0.0] C:\Users\Ahmed\.gradle\caches\transforms-2\files-2.1\9a14a47d66733e15bfdedd77efde175f\jetified-play-services-basement-17.0.0\AndroidManifest.xml:17:1-28:12
+MERGED from [com.google.android.gms:play-services-basement:17.0.0] C:\Users\Ahmed\.gradle\caches\transforms-2\files-2.1\bd8d6fb239b8e7661e85959f29cf9559\jetified-play-services-basement-17.0.0\AndroidManifest.xml:17:1-28:12
 MERGED from [androidx.fragment:fragment:1.1.0] C:\Users\Ahmed\.gradle\caches\transforms-2\files-2.1\08e2314f15663c5978ba621c86c841ca\fragment-1.1.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\Ahmed\.gradle\caches\transforms-2\files-2.1\774bea0cd912130b2ae202ba0f7b587d\viewpager-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.loader:loader:1.0.0] C:\Users\Ahmed\.gradle\caches\transforms-2\files-2.1\f9ccb68a1c2210256d06f08738ef073d\loader-1.0.0\AndroidManifest.xml:17:1-22:12
@@ -73,8 +73,8 @@ MERGED from [com.google.android.gms:play-services-places-placereport:17.0.0] C:\
 MERGED from [com.google.android.gms:play-services-places-placereport:17.0.0] C:\Users\Ahmed\.gradle\caches\transforms-2\files-2.1\8279172c97fd38e0319640c39812b761\play-services-places-placereport-17.0.0\AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.gms:play-services-tasks:17.0.0] C:\Users\Ahmed\.gradle\caches\transforms-2\files-2.1\0ac5027c71fa1627280b37696bd72cd9\play-services-tasks-17.0.0\AndroidManifest.xml:7:5-20
 MERGED from [com.google.android.gms:play-services-tasks:17.0.0] C:\Users\Ahmed\.gradle\caches\transforms-2\files-2.1\0ac5027c71fa1627280b37696bd72cd9\play-services-tasks-17.0.0\AndroidManifest.xml:7:5-20
-MERGED from [com.google.android.gms:play-services-basement:17.0.0] C:\Users\Ahmed\.gradle\caches\transforms-2\files-2.1\9a14a47d66733e15bfdedd77efde175f\jetified-play-services-basement-17.0.0\AndroidManifest.xml:22:5-26:19
-MERGED from [com.google.android.gms:play-services-basement:17.0.0] C:\Users\Ahmed\.gradle\caches\transforms-2\files-2.1\9a14a47d66733e15bfdedd77efde175f\jetified-play-services-basement-17.0.0\AndroidManifest.xml:22:5-26:19
+MERGED from [com.google.android.gms:play-services-basement:17.0.0] C:\Users\Ahmed\.gradle\caches\transforms-2\files-2.1\bd8d6fb239b8e7661e85959f29cf9559\jetified-play-services-basement-17.0.0\AndroidManifest.xml:22:5-26:19
+MERGED from [com.google.android.gms:play-services-basement:17.0.0] C:\Users\Ahmed\.gradle\caches\transforms-2\files-2.1\bd8d6fb239b8e7661e85959f29cf9559\jetified-play-services-basement-17.0.0\AndroidManifest.xml:22:5-26:19
 MERGED from [androidx.core:core:1.1.0] C:\Users\Ahmed\.gradle\caches\transforms-2\files-2.1\28e91832122b5dc7de235c04c0b3d0d2\core-1.1.0\AndroidManifest.xml:24:5-89
 MERGED from [androidx.core:core:1.1.0] C:\Users\Ahmed\.gradle\caches\transforms-2\files-2.1\28e91832122b5dc7de235c04c0b3d0d2\core-1.1.0\AndroidManifest.xml:24:5-89
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] C:\Users\Ahmed\.gradle\caches\transforms-2\files-2.1\a4640adb0898ca7b7d6cd6960a341654\versionedparcelable-1.1.0\AndroidManifest.xml:24:5-25:19
@@ -157,8 +157,8 @@ MERGED from [com.google.android.gms:play-services-places-placereport:17.0.0] C:\
 MERGED from [com.google.android.gms:play-services-places-placereport:17.0.0] C:\Users\Ahmed\.gradle\caches\transforms-2\files-2.1\8279172c97fd38e0319640c39812b761\play-services-places-placereport-17.0.0\AndroidManifest.xml:20:5-44
 MERGED from [com.google.android.gms:play-services-tasks:17.0.0] C:\Users\Ahmed\.gradle\caches\transforms-2\files-2.1\0ac5027c71fa1627280b37696bd72cd9\play-services-tasks-17.0.0\AndroidManifest.xml:5:5-44
 MERGED from [com.google.android.gms:play-services-tasks:17.0.0] C:\Users\Ahmed\.gradle\caches\transforms-2\files-2.1\0ac5027c71fa1627280b37696bd72cd9\play-services-tasks-17.0.0\AndroidManifest.xml:5:5-44
-MERGED from [com.google.android.gms:play-services-basement:17.0.0] C:\Users\Ahmed\.gradle\caches\transforms-2\files-2.1\9a14a47d66733e15bfdedd77efde175f\jetified-play-services-basement-17.0.0\AndroidManifest.xml:20:5-44
-MERGED from [com.google.android.gms:play-services-basement:17.0.0] C:\Users\Ahmed\.gradle\caches\transforms-2\files-2.1\9a14a47d66733e15bfdedd77efde175f\jetified-play-services-basement-17.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-basement:17.0.0] C:\Users\Ahmed\.gradle\caches\transforms-2\files-2.1\bd8d6fb239b8e7661e85959f29cf9559\jetified-play-services-basement-17.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-basement:17.0.0] C:\Users\Ahmed\.gradle\caches\transforms-2\files-2.1\bd8d6fb239b8e7661e85959f29cf9559\jetified-play-services-basement-17.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.fragment:fragment:1.1.0] C:\Users\Ahmed\.gradle\caches\transforms-2\files-2.1\08e2314f15663c5978ba621c86c841ca\fragment-1.1.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.fragment:fragment:1.1.0] C:\Users\Ahmed\.gradle\caches\transforms-2\files-2.1\08e2314f15663c5978ba621c86c841ca\fragment-1.1.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\Ahmed\.gradle\caches\transforms-2\files-2.1\774bea0cd912130b2ae202ba0f7b587d\viewpager-1.0.0\AndroidManifest.xml:20:5-44
@@ -218,8 +218,8 @@ ADDED from [com.google.android.gms:play-services-base:17.0.0] C:\Users\Ahmed\.gr
 	android:name
 		ADDED from [com.google.android.gms:play-services-base:17.0.0] C:\Users\Ahmed\.gradle\caches\transforms-2\files-2.1\a98d174f43943e44235aa13f5f5458ec\play-services-base-17.0.0\AndroidManifest.xml:24:13-79
 meta-data#com.google.android.gms.version
-ADDED from [com.google.android.gms:play-services-basement:17.0.0] C:\Users\Ahmed\.gradle\caches\transforms-2\files-2.1\9a14a47d66733e15bfdedd77efde175f\jetified-play-services-basement-17.0.0\AndroidManifest.xml:23:9-25:69
+ADDED from [com.google.android.gms:play-services-basement:17.0.0] C:\Users\Ahmed\.gradle\caches\transforms-2\files-2.1\bd8d6fb239b8e7661e85959f29cf9559\jetified-play-services-basement-17.0.0\AndroidManifest.xml:23:9-25:69
 	android:value
-		ADDED from [com.google.android.gms:play-services-basement:17.0.0] C:\Users\Ahmed\.gradle\caches\transforms-2\files-2.1\9a14a47d66733e15bfdedd77efde175f\jetified-play-services-basement-17.0.0\AndroidManifest.xml:25:13-66
+		ADDED from [com.google.android.gms:play-services-basement:17.0.0] C:\Users\Ahmed\.gradle\caches\transforms-2\files-2.1\bd8d6fb239b8e7661e85959f29cf9559\jetified-play-services-basement-17.0.0\AndroidManifest.xml:25:13-66
 	android:name
-		ADDED from [com.google.android.gms:play-services-basement:17.0.0] C:\Users\Ahmed\.gradle\caches\transforms-2\files-2.1\9a14a47d66733e15bfdedd77efde175f\jetified-play-services-basement-17.0.0\AndroidManifest.xml:24:13-58
+		ADDED from [com.google.android.gms:play-services-basement:17.0.0] C:\Users\Ahmed\.gradle\caches\transforms-2\files-2.1\bd8d6fb239b8e7661e85959f29cf9559\jetified-play-services-basement-17.0.0\AndroidManifest.xml:24:13-58

@@ -3,10 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:gradeproject/AllWidgets/ProgressDialog.dart';
 import 'package:gradeproject/api/apiservice.dart';
-import 'package:gradeproject/main.dart';
 import 'package:gradeproject/models/login_model.dart';
 import 'package:gradeproject/pages/sign_up.dart';
-import 'dart:convert';
+import 'package:progress_dialog/progress_dialog.dart';
 
 import 'package:page_transition/page_transition.dart';
 import 'home.dart';
@@ -17,6 +16,8 @@ class Login extends StatefulWidget {
 }
 
 class _LoginState extends State<Login> {
+  ProgressDialog progressdialog;
+
   LoginRequestModel requestModel;
   GlobalKey<FormState> globalFormKey = GlobalKey<FormState>();
   bool isApiCallProcess = false;
@@ -31,6 +32,20 @@ class _LoginState extends State<Login> {
 
   @override
   Widget build(BuildContext context) {
+    progressdialog = ProgressDialog(
+      context,
+      type: ProgressDialogType.Normal,
+      isDismissible: true,
+    );
+    progressdialog.style(
+        message: "Please Wait....",
+        borderRadius: 10,
+        elevation: 10.0,
+        backgroundColor: Color(0xff078547),
+        progress: 0.0,
+        maxProgress: 100.0,
+        messageTextStyle: TextStyle(
+            color: Colors.white, fontSize: 18, fontWeight: FontWeight.w400));
     return Scaffold(
       backgroundColor: Color(0xff078547),
       body: SingleChildScrollView(
@@ -124,6 +139,8 @@ class _LoginState extends State<Login> {
                                         setState(() {
                                           isApiCallProcess = false;
                                         });
+                                        progressdialog.show();
+                                        displayToastMessage("Successfully login",context);
                                         Navigator.push(
                                           context,
                                           PageTransition(
@@ -132,6 +149,9 @@ class _LoginState extends State<Login> {
                                             child: home_map(),
                                           ),
                                         );
+                                      }
+                                      else{
+                                        displayToastMessage("Invalid Email or Password", context);
                                       }
                                     });
                                   }

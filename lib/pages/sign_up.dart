@@ -1,15 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:gradeproject/AllWidgets/ProgressDialog.dart';
-import 'package:gradeproject/main.dart';
 import 'package:gradeproject/models/Register_model.dart';
-
 import 'package:gradeproject/pages/home.dart';
 import 'package:page_transition/page_transition.dart';
-import 'package:http/http.dart' as http;
 import 'package:fluttertoast/fluttertoast.dart';
 import 'login.dart';
 import 'package:gradeproject/api/apiservice.dart';
-
+import 'package:progress_dialog/progress_dialog.dart';
 
 class sign_up extends StatefulWidget {
   static const String idScreen = "Register";
@@ -19,6 +16,8 @@ class sign_up extends StatefulWidget {
 }
 
 class _sign_upState extends State<sign_up> {
+  ProgressDialog progressdialog;
+
   RegisterRequestModel Register;
   GlobalKey<FormState> globalFormKey = GlobalKey<FormState>();
   bool isApiCallProcess = false;
@@ -40,6 +39,20 @@ class _sign_upState extends State<sign_up> {
 
   @override
   Widget build(BuildContext context) {
+    progressdialog = ProgressDialog(
+      context,
+      type: ProgressDialogType.Normal,
+      isDismissible: true,
+    );
+    progressdialog.style(
+        message: "Please Wait....",
+        borderRadius: 10,
+        elevation: 10.0,
+        backgroundColor: Color(0xff078547),
+        progress: 0.0,
+        maxProgress: 100.0,
+        messageTextStyle: TextStyle(
+            color: Colors.white, fontSize: 18, fontWeight: FontWeight.w400));
     return Scaffold(
       backgroundColor: Color(0xff078547),
       body: SingleChildScrollView(
@@ -106,7 +119,8 @@ class _sign_upState extends State<sign_up> {
                                   children: <Widget>[
                                     Flexible(
                                       child: TextFormField(
-                                          onSaved: (input)=> Register.firstName=input,
+                                          onSaved: (input) =>
+                                              Register.firstName = input,
                                           controller: FnameTEC,
                                           keyboardType: TextInputType.text,
                                           decoration: InputDecoration(
@@ -121,7 +135,8 @@ class _sign_upState extends State<sign_up> {
                                                   borderRadius:
                                                       BorderRadius.circular(10),
                                                   borderSide: new BorderSide(
-                                                      color: Color(0xff078547))),
+                                                      color:
+                                                          Color(0xff078547))),
                                               contentPadding:
                                                   EdgeInsets.all(10))),
                                     ),
@@ -130,8 +145,8 @@ class _sign_upState extends State<sign_up> {
                                     ),
                                     Flexible(
                                       child: TextFormField(
-                                          onSaved: (input)=> Register.lastName=input,
-
+                                          onSaved: (input) =>
+                                              Register.lastName = input,
                                           controller: LnameTEC,
                                           keyboardType: TextInputType.text,
                                           decoration: InputDecoration(
@@ -146,7 +161,8 @@ class _sign_upState extends State<sign_up> {
                                                   borderRadius:
                                                       BorderRadius.circular(10),
                                                   borderSide: new BorderSide(
-                                                      color: Color(0xff078547))),
+                                                      color:
+                                                          Color(0xff078547))),
                                               contentPadding:
                                                   EdgeInsets.all(10))),
                                     )
@@ -156,15 +172,30 @@ class _sign_upState extends State<sign_up> {
                               SizedBox(
                                 height: 20,
                               ),
-                              bulidTextField(EmailTEC, 'Email', false,
-                                  TextInputType.emailAddress, null, (input) => Register.email =input),
+                              bulidTextField(
+                                  EmailTEC,
+                                  'Email',
+                                  false,
+                                  TextInputType.emailAddress,
+                                  null,
+                                  (input) => Register.email = input),
                               SizedBox(
                                 height: 20,
                               ),
-                              bulidTextField(PasswTEC, 'Password', true,
-                                  TextInputType.text, 'Only 8 number',(input)=> Register.password=input),
-                              bulidTextField(REPasswTEC, 'Repeat Password', true,
-                                  TextInputType.text, 'Only 8 number',null),
+                              bulidTextField(
+                                  PasswTEC,
+                                  'Password',
+                                  true,
+                                  TextInputType.text,
+                                  'Only 8 number',
+                                  (input) => Register.password = input),
+                              bulidTextField(
+                                  REPasswTEC,
+                                  'Repeat Password',
+                                  true,
+                                  TextInputType.text,
+                                  'Only 8 number',
+                                  null),
                               Padding(
                                 padding:
                                     const EdgeInsets.symmetric(horizontal: 15),
@@ -174,7 +205,8 @@ class _sign_upState extends State<sign_up> {
                                   children: <Widget>[
                                     Flexible(
                                       child: TextFormField(
-                                        onSaved: (input)=> Register.carNumber=input,
+                                          onSaved: (input) =>
+                                              Register.carNumber = input,
                                           controller: CNTEC,
                                           keyboardType: TextInputType.number,
                                           decoration: InputDecoration(
@@ -189,7 +221,8 @@ class _sign_upState extends State<sign_up> {
                                                   borderRadius:
                                                       BorderRadius.circular(10),
                                                   borderSide: new BorderSide(
-                                                      color: Color(0xff078547))),
+                                                      color:
+                                                          Color(0xff078547))),
                                               contentPadding:
                                                   EdgeInsets.all(10))),
                                     ),
@@ -198,8 +231,8 @@ class _sign_upState extends State<sign_up> {
                                     ),
                                     Flexible(
                                       child: TextFormField(
-                                          onSaved: (input)=> Register.carLetter=input,
-
+                                          onSaved: (input) =>
+                                              Register.carLetter = input,
                                           controller: CLTEC,
                                           keyboardType: TextInputType.text,
                                           decoration: InputDecoration(
@@ -214,7 +247,8 @@ class _sign_upState extends State<sign_up> {
                                                   borderRadius:
                                                       BorderRadius.circular(10),
                                                   borderSide: new BorderSide(
-                                                      color: Color(0xff078547))),
+                                                      color:
+                                                          Color(0xff078547))),
                                               contentPadding:
                                                   EdgeInsets.all(10))),
                                     )
@@ -228,8 +262,8 @@ class _sign_upState extends State<sign_up> {
                                 padding:
                                     const EdgeInsets.symmetric(horizontal: 15),
                                 child: TextFormField(
-                                    onSaved: (input)=> Register.phoneNumber=input,
-
+                                    onSaved: (input) =>
+                                        Register.phoneNumber = input,
                                     controller: PhoneNTEC,
                                     keyboardType: TextInputType.phone,
                                     decoration: InputDecoration(
@@ -267,19 +301,22 @@ class _sign_upState extends State<sign_up> {
                                     borderRadius: BorderRadius.circular(150)),
                                 child: FlatButton(
                                   onPressed: () async {
+                                    progressdialog.show();
                                     if (vaildateAndSave()) {
                                       print(Register.toJson());
                                       setState(() {
                                         isApiCallProcess = true;
                                       });
                                       APIService apiService = new APIService();
-                                      apiService
-                                          .Request(Register)
+                                      apiService.Request(Register)
                                           .then((value) {
                                         if (value != null) {
                                           setState(() {
                                             isApiCallProcess = false;
                                           });
+                                          displayToastMessage(
+                                              "Congratulation.\n You Registered Successfully",
+                                              context);
                                           Navigator.push(
                                             context,
                                             PageTransition(
@@ -291,7 +328,6 @@ class _sign_upState extends State<sign_up> {
                                         }
                                       });
                                     }
-
                                   },
                                   child: Text(
                                     'Sign Up',
@@ -350,6 +386,7 @@ class _sign_upState extends State<sign_up> {
       ),
     );
   }
+
   bool vaildateAndSave() {
     final form = globalFormKey.currentState;
     if (form.validate()) {
@@ -360,13 +397,13 @@ class _sign_upState extends State<sign_up> {
     }
   }
 }
-  displayToastMessage(String message, BuildContext context) {
-    Fluttertoast.showToast(msg: message);
-  }
 
+displayToastMessage(String message, BuildContext context) {
+  Fluttertoast.showToast(msg: message);
+}
 
 Widget bulidTextField(TextEditingController CController, String hintText,
-    bool _isObscure, var typeinput, String helptext,Function onsaved) {
+    bool _isObscure, var typeinput, String helptext, Function onsaved) {
   return Padding(
     padding: const EdgeInsets.symmetric(horizontal: 15),
     child: Flexible(
