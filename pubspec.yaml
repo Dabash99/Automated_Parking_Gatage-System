@@ -50,7 +50,13 @@ dependencies:
   #####
   fluttertoast: ^8.0.3
   progress_dialog: ^1.2.4
+  flutter_countdown_timer: ^4.0.2
   circular_countdown_timer: ^0.2.0
+
+  #Dialogs
+  cool_alert: ^1.0.3
+  custom_dialog: ^0.0.2
+
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -80,7 +86,6 @@ flutter:
     - family: Cairo
       fonts:
         - asset: assets/fonts/Cairo/Cairo-Regular.ttf
-
 
 
   # For details regarding fonts from package dependencies,

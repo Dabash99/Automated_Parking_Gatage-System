@@ -9,8 +9,12 @@ class garageselect extends StatefulWidget {
 
 class _garageselectState extends State<garageselect> {
   final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
-  bool pressAttention=true;
+  bool pressAttention = true;
 
+  void tapped(int index){
+    bool pressAttention = true;
+
+  }
   final List<String> entries = <String>[
     'A1',
     'A2',
@@ -20,7 +24,8 @@ class _garageselectState extends State<garageselect> {
     'A6',
     'A7',
     'A8',
-    'A9'
+    'A9',
+    'A10'
   ];
   final List<Color> colordata = <Color>[
     Colors.red,
@@ -37,7 +42,7 @@ class _garageselectState extends State<garageselect> {
           'HTI Garage',
           IconButton(
             onPressed: () {
-              Navigator.pop(context,false);
+              Navigator.pop(context, false);
             },
             icon: Icon(
               Icons.arrow_back,
@@ -63,33 +68,45 @@ class _garageselectState extends State<garageselect> {
                         fontSize: 17,
                         backgroundColor: Colors.white12),
                   ),
-                  ListView.builder(
-                      physics: NeverScrollableScrollPhysics(),
-                      shrinkWrap: true,
-                      itemCount: entries.length,
-                      itemBuilder: (BuildContext context, int index) {
-                    return Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child:Ink(
-                        child: InkWell(
-                          child: Container(
-                            height: 120,
-                            padding: EdgeInsets.all(5),
-                            decoration: BoxDecoration(
-                              color: Colors.green,
-                              border: Border.all(color: Colors.black.withOpacity(0.5),width: pressAttention ? 0 : 8),
-                              borderRadius: BorderRadius.circular(12),
+                  GridView.count(
+                    crossAxisCount: 3,
+                    shrinkWrap: true,
+                    children: List.generate(entries.length, (index) {
+                      return Padding(
+                        padding: const EdgeInsets.all(7.0),
+                        child: Ink(
+                          child: InkWell(
+                            child: GestureDetector(
+                              onTap: (){
+                                setState(() => tapped(index));
+                                print('Tapped ${entries[index]}');
+                              },
+                              child: Container(
+                                height: 120,
+                                padding: EdgeInsets.all(5),
+                                decoration: BoxDecoration(
+                                  color: Colors.green,
+                                  border: Border.all(
+                                      color: Colors.black.withOpacity(0.5),
+                                      width: pressAttention ? 0 : 8),
+                                  borderRadius: BorderRadius.circular(12),
+                                ),
+                                child: Center(
+                                    child: Text(
+                                  entries[index],
+                                  style: TextStyle(
+                                      color: Colors.white, fontSize: 25,fontWeight: FontWeight.w700),
+                                )),
+                              ),
                             ),
-                          ),
-                          onTap: (){
-                            setState(() => pressAttention = !pressAttention);
-                            print('Tapped');
-                          },
-                        ),
-                      ),
-                    );
-                  }),
+                            onTap: () {
 
+                            },
+                          ),
+                        ),
+                      );
+                    }),
+                  ),
                   TextButton(
                     onPressed: () {},
                     child: Text(
