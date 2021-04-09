@@ -109,9 +109,12 @@ class _garageselectState extends State<garageselect> {
                   ),
                   TextButton(
                     onPressed: () {},
-                    child: Text(
-                      "Book Now",
-                      style: TextStyle(fontFamily: "BackToSchool"),
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 40,vertical: 2),
+                      child: Text(
+                        "Book Now",
+                        style: TextStyle(fontFamily: "BackToSchool",fontSize: 19),
+                      ),
                     ),
                     style: TextButton.styleFrom(
                       primary: Colors.white,
